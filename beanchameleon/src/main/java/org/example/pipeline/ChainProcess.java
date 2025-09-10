@@ -1,7 +1,7 @@
 package org.example.pipeline;
 
 /**
- * <T extends ChainModel> 传输数据上下文，制定规范，必须实现ProcessModel
+ * 执行链，<T extends ChainModel> 传输数据上下文，制定规范，必须实现ProcessModel
  * @param <T>
  */
 public interface ChainProcess<T extends ChainModel> {

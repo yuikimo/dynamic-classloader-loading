@@ -18,17 +18,11 @@ public class ChainController {
     }
 
     public void addChain(String template, Collection<ChainProcess> chains) {
-        if (!processMap.containsKey(template)) {
-            processMap.put(template, new ArrayList<>());
-        }
-        processMap.get(template).addAll(chains);
+        processMap.computeIfAbsent(template, k -> new ArrayList<>()).addAll(chains);
     }
 
     public void addChain(String template, ChainProcess chain) {
-        if (!processMap.containsKey(template)) {
-            processMap.put(template, new ArrayList<>());
-        }
-        processMap.get(template).add(chain);
+        processMap.computeIfAbsent(template, k -> new ArrayList<>()).add(chain);
     }
 
     public ChainContext process(String template, ChainContext context) {

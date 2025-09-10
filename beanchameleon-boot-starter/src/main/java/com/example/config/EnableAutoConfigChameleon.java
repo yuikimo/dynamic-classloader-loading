@@ -66,9 +66,7 @@ public class EnableAutoConfigChameleon {
     @ConditionalOnMissingBean(ChainController.class)
     public ChainController chainController(ChainTemplate chainTemplate) {
         ChainController chainController = new ChainController();
-        chainTemplate.getTemplates().forEach((k, v) -> {
-            chainController.addChain(k, v);
-        });
+        chainTemplate.getTemplates().forEach((k, v) -> chainController.addChain(k, v));
         return chainController;
     }
 

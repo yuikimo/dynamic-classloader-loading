@@ -7,7 +7,7 @@ import org.example.pipeline.ChainContext;
 import org.example.pipeline.ChainProcess;
 
 /**
- * 基于内存管理变色龙
+ * 基于内存管理器的变色龙
  */
 public class MemoryChameleonManager extends ChameleonManagerService implements ChainProcess<ChameleonSrcCode> {
 
